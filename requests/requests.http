@@ -1,0 +1,55 @@
+GET {{LOCALHOST}}
+
+
+###
+POST {{LOCALHOST}}/webhook/{{TOKEN}}
+Content-Type: application/json
+
+{
+ "body": {
+  "message": {
+   "chat": {
+    "id": {{CHAT_ID}}
+   },
+   "text": "Hello"
+  }
+ }
+}
+
+###
+POST https://api.telegram.org/bot{{TOKEN}}/sendChatAction
+Content-Type: application/json
+
+{
+ "chat_id": {{CHAT_ID}},
+ "action": "typing"
+}
+
+
+###
+GET https://api.telegram.org/bot{{TOKEN}}/setWebhook?url={{WEBHOOK}}/{{TOKEN}}&drop_pending_updates=true
+
+
+###
+POST https://api.telegram.org/bot{{TOKEN}}/approveChatJoinRequest?chat_id={{CHAT_ID_ACADEMICOS}}&user_id={{FRIDA_USER_ID}}
+
+###
+POST https://api.telegram.org/bot{{TOKEN}}/declineChatJoinRequest?chat_id={{CHAT_ID_ACADEMICOS}}&user_id={{FRIDA_USER_ID}}
+
+
+###
+POST https://api.telegram.org/bot{{TOKEN}}/getChatMember?chat_id={{CHAT_ID_ACADEMICOS}}&user_id={{RIGO_USER_ID}}
+
+### Create join request link to a Academicos group
+POST https://api.telegram.org/bot{{TOKEN}}/createChatInviteLink?
+ chat_id={{CHAT_ID_ACADEMICOS}}
+ &name=Link%20para%20unirse%20al%20grupo
+ &creates_join_request=true
+
+
+### Ban usuario de grupo de academicos
+POST https://api.telegram.org/bot{{TOKEN}}/banChatMember?
+ chat_id={{CHAT_ID_ACADEMICOS}}
+ &user_id={{FRIDA_USER_ID}}
+ &until_date=1668837599
+ &revoke_messages=false
