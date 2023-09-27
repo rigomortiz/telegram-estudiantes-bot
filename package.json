@@ -1,6 +1,6 @@
 {
-  "name": "telegram-academicos-bot",
-  "url": "https://academicos-bot.cyclic.app",
+  "name": "telegram-estudiantes-bot",
+  "url": "https://estudiantes-bot.cyclic.app",
   "version": "1.0.0",
   "description": "Telegram bot",
   "main": "index.js",
