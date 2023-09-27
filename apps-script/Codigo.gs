@@ -17,7 +17,7 @@ function onFormSubmite(e) {
 
   const html =
     `Hola ${name}
-  \nBinvenid@ al grupo de Telegram Asamblea de académicas y académicos FC.
+  \nBinvenid@ al grupo de Telegram Estudiantes de la Facultad de Ciencias.
   \nCódigo de validación: ${user_id}
   \nSaludos.`;
 
