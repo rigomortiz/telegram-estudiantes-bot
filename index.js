@@ -19,6 +19,7 @@ const webhookURL = `${SERVER_URL}${URI}`
 // configuring the bot via Telegram API to use our route below as webhook
 const setupWebhook = async () => {
     try {
+        console.log(`setupWebhook`)
         const { data } = await axios.get(`${TELEGRAM_API}/setWebhook?url=${webhookURL}&drop_pending_updates=true`)
         console.log(`setupWebhook:`, data)
     } catch (error) {
